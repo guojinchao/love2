@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>告白气球</title>
+		<embed src="./mp3/music1.mp3" hidden="true" autostart="true" loop="true">
+		<style type="text/css">
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+				background: black                                                                                                                                           ;
+			}
+			
+			div {
+				position: absolute;
+				border-radius: 50%;
+			}
+			
+			#txt{
+				position: relative;
+				height: 100px;
+				margin: 260px 420px;
+				font-size: 50px;
+				font-family: 小隶;
+				z-index: 500;
+				text-align: center;
+				color: rgba(255, 255, 255, 0.7);
+				z-index: 1;
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="txt">
+			<p>I Love You&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---- My Baby</p>
+		</div>
+		<script type="text/javascript" src="./js/Balloon.js"></script>
+		<script type="text/javascript">
+			var n = 0;
+			var t = setInterval(function(){
+				if(n>=10){
+					clearInterval(t);
+					return
+				}
+				//照片
+				var b = new Balloon("url(./img/a"+ ++n +".jpg)");
+				
+				//绘制气球
+				b.drawBalloon(document.body);
+				//让气球动起来
+				b.run();
+			},1000);
+			
+			//气球
+			for(var i = 0; i < 30; i++) {
+				//创建一个气球对象
+				var b = new Balloon();
+				//绘制气球
+				b.drawBalloon(document.body);
+				//让气球动起来
+				b.run();
+			}
+		</script>
+	</body>
+
+</html>
